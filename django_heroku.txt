@@ -1,0 +1,35 @@
+Install python/have python installed
+install pip if on windows 
+create virtual environment
+
+
+install django in virtual environment
+start a django project-> django-admin startproject ProjectName
+create a django app----> python manage.py startapp AppName
+django project and app files to modify
+in app--view,url,add a templates folder and include a html file on content intended to be dispayed
+in project--settings file, url
+
+Install heroku, gunicorn
+
+
+Deployment
+# reference https://stackabuse.com/deploying-django-apps-to-heroku-from-github/
+1. install Git/have Git installed
+2. Github account -create a repository and have the project files in it
+3. Create a heroku account
+
+in the settings file add: STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+Procfile: 
+
+1. web: gunicorn portfolio_project.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
+2. web: gunicorn plaindjango.wsgi:application --log-file -
+
+requirements.txt
+pip freeze > requirements.txt
+
+Heroku
+1. new pipeline
+2. connect to github project's repository
